@@ -107,7 +107,8 @@ colnames(merged_set)<-full_names
 
 tidy_avg_set<-merged_set%>%group_by(activity_name,subjectID)%>%summarise_all(mean)
 
-write.table(tidy_avg_set, "tidy_data_set.txt", row.name=FALSE)
+tidyset<-as.data.frame(tidy_avg_set)
+write.table(tidyset, "tidyset.txt", row.name=FALSE)
 
 ## Ok done!
 
