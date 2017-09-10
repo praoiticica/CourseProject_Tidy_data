@@ -107,6 +107,9 @@ colnames(tidy_mean_std)<-edited_names
 tidy_set<-tidy_mean_std%>%group_by(activity_name,subject)%>%
   summarise_all(mean)
 
+tidy_set_names<-colnames(tidy_set)
+
 write.table(tidy_set, "tidy_set.txt", row.name=FALSE)
+write.table(tidy_set_names, "tidy_set_names.txt", row.names = T)
 
 ## Ok done!
