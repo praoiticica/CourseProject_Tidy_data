@@ -67,7 +67,7 @@ mydownload()
         
         # Step 2: Extracts only the measurements on the mean and standard deviation for each measurement.
         
-        meancols<-grep("[Mm]ean", colnames(merged_set))
+        meancols<-grep("mean[^Freq]",colnames(merged_set))
         stdcols<- grep("std", colnames(merged_set))
         mean_std_set<-merged_set%>%select(subject,activityid,meancols,stdcols)
         
